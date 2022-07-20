@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="myViewModel"
+            type="com.wdy.musicapp.viewModel.MyViewModel" />
+
+        <variable
+            name="songBean"
+            type="com.wdy.musicapp.model.SongBean" />
+
+
+    </data>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/img"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:text="@{songBean.name}"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/text_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:layout_toEndOf="@+id/text_name"
+                android:text="@{songBean.artist}"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/text_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/text_artist"
+                android:layout_margin="10dp"
+                android:text="@{songBean.album}"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/text_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/text_album"
+                android:layout_margin="10dp"
+                android:text="@{songBean.time()}"
+                android:textSize="20sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/main_activity"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                >
+
+
+                <Button
+                    android:id="@+id/play"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/play_ic_selector" />
+
+                <Button
+                    android:id="@+id/btn_firstMusic"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toStartOf="@+id/play"
+                    android:background="@drawable/button_previous" />
+
+                <Button
+                    android:id="@+id/btn_lastMusic"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toEndOf="@+id/play"
+                    android:background="@drawable/button_next" />
+
+                <Switch
+                    android:id="@+id/service_music"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/play"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:checked="true"
+                    android:text="后台"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Button
+                    android:id="@+id/list"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignBottom="@+id/play"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/ic_list_reorder_24" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+</layout>

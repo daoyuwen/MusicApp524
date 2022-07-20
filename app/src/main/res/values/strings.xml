@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">musicApp</string>
+    <string name="song">刚刚好</string>
+    <string name="album">刚刚好</string>
+    <string name="singer">薛之谦</string>
+    <string name="time">4:01</string>
+    <string name="open">开关</string>
+    <drawable name="clr_normal">#ff6501</drawable>
+    <drawable name="clr_pressed">#a44100</drawable>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="SongBean"
+            type="com.wdy.musicapp.model.SongBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/music_list"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_background"
+            android:elevation="3dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{SongBean.name}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_name"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{SongBean.artist}"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/item_line"
+                android:layout_width="2dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/item_artist"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toEndOf="@id/item_artist"
+                android:foreground="@color/gray"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/item_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/item_artist"
+                android:layout_toEndOf="@id/item_line"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{SongBean.album}"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/item_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/item_artist"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:text="@{SongBean.time()}" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

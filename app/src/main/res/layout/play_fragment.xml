@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/rou"
+        tools:context=".view.SongFragment">
+
+<Switch
+    android:id="@+id/sort"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="正序/倒叙"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_below="@+id/sort"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/footview"/>
+
+
+    </RelativeLayout>
+</layout>
